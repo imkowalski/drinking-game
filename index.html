@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 32px;
+        }
+        .quote-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 1s;
+        }
+        .quote-container.spin {
+            transform: rotate(10000deg);
+        }
+        .quote {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">
+        Drink or Answer
+    </h1>
+    <div class="quote-container" id="quoteContainer">
+        <div class="quote" id="quote">Click anywhere to get a quote</div>
+    </div>
+
+    <script>
+        const quotes = [
+            "What's the weirdest thing you''ve ever pretended to like to impress someone?",
+"If you had to replace your hands with everyday objects, what would they be and why?",
+"What's the most embarrassing thing you've ever done to get out of a speeding ticket?",
+"If you could only eat one condiment for the rest of your life, what would it be?",
+"What's the strangest thing you've ever Googled at 2 a.m.?",
+"If you had to swap lives with a cartoon character for a week, who would it be and why?",
+"What's the most ridiculous lie you've told that someone actually believed?",
+"If you had to describe your love life using only movie titles, what would they be?",
+"What's the weirdest thing you've ever eaten just to prove you could?",
+"If you could only communicate using quotes from one TV show for the rest of your life, which show would it be?",
+"What's the most awkward thing you've ever said during a job interview?",
+"If you had to wear one outfit every day for the rest of your life, what would it be?",
+"What's the most ridiculous thing you've ever cried over?",
+"If you could only say one word for the next 24 hours, what would it be?",
+"What's the weirdest thing you've ever done in front of a mirror when you thought no one was watching?",
+"If you had to give yourself a new name based on your personality, what would it be?",
+"What's the most embarrassing song on your playlist that you secretly love?",
+"If you could only use one emoji for the rest of your life, which one would it be?",
+"What's the weirdest thing you've ever done to avoid talking to someone?",
+"If you had to live in a different decade, which one would you choose and why?"
+        ];
+
+        const quoteContainer = document.getElementById('quoteContainer');
+        const quoteElement = document.getElementById('quote');
+
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+
+        function showRandomQuote() {
+            quoteElement.textContent = getRandomQuote();
+        }
+
+        document.body.addEventListener('click', () => {
+            console.log('clicked');
+            quoteContainer.classList.add('spin');
+            setTimeout(() => {
+                quoteContainer.classList.remove('spin');
+                showRandomQuote();
+            }, 1000);
+        });
+
+        showRandomQuote();
+    </script>
+</body>
+</html></div>
