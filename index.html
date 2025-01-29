@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
         }
+
         .title {
             position: absolute;
             top: 20px;
@@ -21,6 +23,7 @@
             transform: translateX(-50%);
             font-size: 32px;
         }
+
         .quote-container {
             text-align: center;
             padding: 20px;
@@ -29,15 +32,18 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 1s;
         }
+
         .quote-container.spin {
             transform: rotate(10000deg);
         }
+
         .quote {
             font-size: 24px;
             margin-bottom: 20px;
         }
     </style>
 </head>
+
 <body>
     <h1 class="title">
         Drink or Answer
@@ -48,26 +54,103 @@
 
     <script>
         const quotes = [
-            "What's the weirdest thing you''ve ever pretended to like to impress someone?",
-"If you had to replace your hands with everyday objects, what would they be and why?",
-"What's the most embarrassing thing you've ever done to get out of a speeding ticket?",
-"If you could only eat one condiment for the rest of your life, what would it be?",
-"What's the strangest thing you've ever Googled at 2 a.m.?",
-"If you had to swap lives with a cartoon character for a week, who would it be and why?",
-"What's the most ridiculous lie you've told that someone actually believed?",
-"If you had to describe your love life using only movie titles, what would they be?",
-"What's the weirdest thing you've ever eaten just to prove you could?",
-"If you could only communicate using quotes from one TV show for the rest of your life, which show would it be?",
-"What's the most awkward thing you've ever said during a job interview?",
-"If you had to wear one outfit every day for the rest of your life, what would it be?",
-"What's the most ridiculous thing you've ever cried over?",
-"If you could only say one word for the next 24 hours, what would it be?",
-"What's the weirdest thing you've ever done in front of a mirror when you thought no one was watching?",
-"If you had to give yourself a new name based on your personality, what would it be?",
-"What's the most embarrassing song on your playlist that you secretly love?",
-"If you could only use one emoji for the rest of your life, which one would it be?",
-"What's the weirdest thing you've ever done to avoid talking to someone?",
-"If you had to live in a different decade, which one would you choose and why?"
+            "What's the weirdest thing you've ever pretended to like to impress someone?",
+            "If you had sex, with someone and they died, would you still finnish?",
+            "Who was the last person you had sex with?",
+            "Have you ever looked at your butthole in the mirror?",
+            "Your significant other and your mom switch bodies, the only way to get them to switch back is to fuck one of them. Which one do you choose?",
+            "Who in this circle would you be most willing to have sex with?",
+            "Who's bed apart from your own was the last one you slept in?",
+            "Would you rather have your dad walk in on you and a goat fucking or vice versa",
+            "Fuck, merry & kill every person in the group, and explain",
+            "You have to give up one of the following forever. Which is it? Getting oral sex, or cheese?",
+            "Have you masturbated in the past week?",
+            "Do you look at the toilet paper after you wipe your ass?",
+            "Would you rather kiss the person to the left or to the right of you?",
+            "Megan Fox or Rayan Reynolds",
+            "Have you ever been as far as decided to want more to do look like?",
+            "What's your biggest insecurity",
+            "Are you sometimes afraid of black people?",
+            "How much money is in your bank account, right now?",
+            "Is your mom hot?",
+            "What is the worst thing you've ever done, morally?",
+            "What is your guilty pleasure?",
+            "What color is your underwear?",
+            "What do you think is your “type”?",
+            "Have you ever walked in on someone or been walked in on?",
+            "Would you ever consider being in an open relationship?",
+            "Have you ever given a fake number to someone who was hitting on you?",
+            "If you we're turned into a member of the opposite sex right now, would you be gay/lesbian?",
+            "If you could only eat one condiment for the rest of your life, what would it be?",
+            "If you had to swap lives with a cartoon character for a week, who would it be and why?",
+            "What's the most ridiculous lie you've told that someone actually believed?",
+            "If you had to describe your love life using only movie titles, what would they be?",
+            "If you could only say one word for the next 24 hours, what would it be?",
+            "If you had to give yourself a new name based on your personality, what would it be?",
+            "What's the most embarrassing song on your playlist that you secretly love?",
+            "If you could only use one emoji for the rest of your life, which one would it be?",
+            "Who was the first person you fell in love with?",
+            "What's your biggest regret?",
+            "Have you ever gone number two in your pants?",
+            "What's your ick?",
+            "Who in the group would you want by your side in a zombie apocalypse?",
+            "Would you kiss the person next to you?",
+            "Which person in the group is the funniest?",
+            "Have you slept with anyone in the room?",
+            "How many people in this group have you had a crush on?",
+            "Have you ever lied about your age to get into a bar or club?",
+            "Who's the worst dancer in the group?",
+            "What's something you've Googled that you aren't proud to admit?",
+            "Who in the group has the most attractive parents?",
+            "Have you ever stalked anyone in this room on social media?",
+            "What was the last illegal thing you did?",
+            "Out of everyone in the room, who is the most likely to get arrested and why?",
+            "Who in the room has the biggest potty mouth?",
+            "If you could switch lives with anyone for a day, who would it be?",
+            "Can you reenact your first kiss with someone in this room?",
+            "Is there anyone here that you wish you were closer friends with?",
+            "Do you have a hidden talent or party trick?",
+            "Rate everyone playing from your most to least favorite.",
+            "Who at the party would you choose to hook up with to make an ex jealous?",
+            "Tell us your most embarrassing puking story.",
+            "How many drinks/beers can you drink in 30 minutes? ",
+            "Who in the group has the most attractive parents? ",
+            "Have you ever lied about your age to get into a bar or club?",
+            "Be honest, do you pee in the shower? ",
+            "Have you ever used a dating app? ",
+            "What's something sexy that you want to try? ",
+            "Which came first, your teenage years or losing your virginity? ",
+            "Do you have anything on your cell phone that you hide from everyone? ",
+            "What color is your underwear?",
+            "What type do you prefer to hook up with?",
+            "Would you kiss the person next to you",
+            "Have you cyberstalked anyone in this room",
+            "Have you ever sneaked out of a date?",
+            "What's the worst breakup you've been a part of?",
+            "Describe yourself in the sexiest way you know how.",
+            "Does size really matter",
+            "What's the naughtiest thing you've ever done?",
+            "How many partners have you cheated on?",
+            "Have you ever gotten a fake number from someone?",
+            "Do you think you're a good partner in bed?",
+            "What's your best move?",
+            "What time of day are you the most interested in certain bedroom activities",
+            "What do you like to call your partner in bed?",
+            "Do you have anything on your cell phone that you hide from everyone?",
+            "What color is your underwear",
+            "Would you say it's easy for you to be seduced?",
+            "Have you ever cheated in past relationships?",
+            "Have you ever given your partner a sexy dance?",
+            "How many times a week do you crave intimacy?",
+            "What's one thing about your partner that really turns you on?",
+            "Does going to a strip club interest you",
+            "Have you gotten intimate in public",
+            "What's a fantasy of yours that has yet to happen?",
+            "Do you and your partner watch adult movies together?",
+            "What's the naughtiest dream you've ever had?",
+            "Do you prefer an open partnership?",
+            "What about you do you think turns me on?",
+            "Have you ever given a fake number to someone who was hitting on you?",
         ];
 
         const quoteContainer = document.getElementById('quoteContainer');
@@ -94,4 +177,6 @@
         showRandomQuote();
     </script>
 </body>
-</html></div>
+
+</html>
+</div>
